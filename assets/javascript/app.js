@@ -3,7 +3,7 @@ let wins = 0;
 //This will keep track of how many times the user has lost
 let losses = 0;
 //This will be how many guesses the user gets
-let guessesLeft = 10;
+let userGuesses = 10;
 //This is an empty array in which our word will get pushed to
 let currentWord = [];
 
@@ -84,7 +84,15 @@ const wordArray = [
   "cellar"
 ];
 
-// wordArray.forEach(function(word) {
+const directionsText = document.getElementById("directions-text");
+
+document.onkeyup = function(event) {
+
+ const userGuess = event.key;
+
+ directionsText.textContent = "";
+
+// .forEach(function(word) {
 //   console.log(word);
 // }
 // );
@@ -100,8 +108,9 @@ scoreText = () => {
 
 guessText = () => {
   document.getElementById("guesses").innerHTML =
-    "You have " + guessesLeft + " Guesses Left!!!";
+    "You have " + userGuesses + " Guesses Left!!!";
 };
 
 guessText();
 scoreText();
+}
