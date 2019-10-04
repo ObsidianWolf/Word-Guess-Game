@@ -84,14 +84,19 @@ const wordArray = [
   "cellar"
 ];
 
+//This is a loop over my wordArray using map
+let words = wordArray.map(words => words);
+
+console.log(words);
+
 scoreText = () => {
   document.getElementById("score").innerHTML =
-    "Wins " + wins + "\n" + "Losses " + losses
+    "Wins " + wins + "\n" + "Losses " + losses;
 };
 
 guessText = () => {
-    document.getElementById("guesses").innerHTML =
-    "You have " + guessesLeft +" Guesses Left!!!"
+  document.getElementById("guesses").innerHTML =
+    "You have " + guessesLeft + " Guesses Left!!!";
 };
 
 guessText();
