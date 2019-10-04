@@ -91,8 +91,6 @@ const wordArray = [
 
 const randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 
-console.log(randomWord);
-
 document.getElementById("word").innerHTML = randomWord;
 
 scoreText = () => {
