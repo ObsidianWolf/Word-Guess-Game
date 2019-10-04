@@ -84,11 +84,14 @@ const wordArray = [
   "cellar"
 ];
 
-wordArray.forEach(function(word, i) {
-  
-  console.log(word);
-}
-);
+// wordArray.forEach(function(word) {
+//   console.log(word);
+// }
+// );
+
+const randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
+
+console.log(randomWord);
 
 scoreText = () => {
   document.getElementById("score").innerHTML =
