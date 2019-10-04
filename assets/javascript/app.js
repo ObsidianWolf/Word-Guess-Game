@@ -93,6 +93,8 @@ const randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 
 console.log(randomWord);
 
+document.getElementById("word").innerHTML = randomWord;
+
 scoreText = () => {
   document.getElementById("score").innerHTML =
     "Wins " + wins + "\n" + "Losses " + losses;
