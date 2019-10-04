@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 10px;
+    place-items: center center;
+}
+
+.title-container {   
+    padding: 60px;
+    display: flex;
+    background-color: black;
+    border-style: double solid;
+    justify-content: center;
+}
+
+.mainTitle {
+    font-family: benguiat; 
+    font-size: 115px;
+    color:rgba(235, 14, 14, 0.801);
+    padding:10px;
+}
+
+.grid-containerTwo {
+    /* width: 434px;
+    height: 90px;
+    margin-left: 541px; */
+    border: double;
+    display: grid;
+    grid-gap: 10px;
+    place-items: center center;
+    font-size: 3em;
+}
+
+
+
