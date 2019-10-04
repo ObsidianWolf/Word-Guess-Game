@@ -84,6 +84,7 @@ const wordArray = [
   "cellar"
 ];
 
+const randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 const directionsText = document.getElementById("directions-text");
 
 document.onkeyup = function(event) {
@@ -97,7 +98,6 @@ document.onkeyup = function(event) {
 // }
 // );
 
-const randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 
 document.getElementById("word").innerHTML = randomWord;
 
