@@ -1,12 +1,20 @@
-//This will keep track of how many times the user has won
-let wins = 0;
-//This will keep track of how many times the user has lost
-let losses = 0;
-//This will be how many guesses the user gets
-let userGuesses = 10;
-//This is an empty array in which our word will get pushed to
-let currentWord = [];
+//what happens when the game loads
+/*when the game loads the user is displayed instructions and a random word is 
+chosen from our array of words*/
+//how does the game start
+/*The game is started when a user presses a letter key
+the directions become hidden. */
+//how does the game get played
+/* you guess the letter that goes into the word and if the letter is in the word 
+it would it would replace an under score until there are no blanks left */
 
+//number of games won
+let wins = 0;
+//number of games lost
+let losses = 0;
+//number of user guesses
+let userGuesses = 10;
+//word array
 const wordArray = [
   "option",
   "permanent",
@@ -83,34 +91,59 @@ const wordArray = [
   "advertise",
   "cellar"
 ];
-
+//global constant with the current word
 const randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
+//this array holds our under scores
+const underScores = [];
+/*iterates through the number of letters in the word and replaces
+them with an under score*/
+for (let i = 0; i < randomWord.length; i++) {
+
+  underScores.push("_");
+
+}
+
+//This is a global constant for our directions to by generated dynamically
 const directionsText = document.getElementById("directions-text");
 
+
+//starts game
 document.onkeyup = function(event) {
+  const userGuess = event.key;
 
- const userGuess = event.key;
+  let lettersFound = false;
+  
+  for (let i = 0; i < randomWord.length; i++) {
+    if(userGuess === randomWord[i]) {
+      underScores[i] = userGuess;
+      lettersFound = true;
+    }
+    
+  }
 
- directionsText.textContent = "";
+  if(!lettersFound) {
+    userGuesses--;
+  }
+  
 
-// .forEach(function(word) {
-//   console.log(word);
-// }
-// );
-
-
-document.getElementById("word").innerHTML = randomWord;
-
-scoreText = () => {
-  document.getElementById("score").innerHTML =
+  // directionsText.textContent = "";
+  
+  document.getElementById("word").innerHTML = underScores;
+  
+  const wordlength = randomWord.length;
+  
+  console.log(wordlength);
+  
+  scoreText = () => {
+    document.getElementById("score").innerHTML =
     "Wins " + wins + "\n" + "Losses " + losses;
-};
-
-guessText = () => {
-  document.getElementById("guesses").innerHTML =
+  };
+  
+  guessText = () => {
+    document.getElementById("guesses").innerHTML =
     "You have " + userGuesses + " Guesses Left!!!";
+  };
+  
+  guessText();
+  scoreText();
 };
-
-guessText();
-scoreText();
-}
