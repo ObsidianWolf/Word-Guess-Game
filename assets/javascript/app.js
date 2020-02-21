@@ -104,7 +104,7 @@ for (let i = 0; i < randomWord.length; i++) {
 }
 
 //This is a global constant for our directions to by generated dynamically
-const directionsText = document.getElementById("directions-text");
+// const directionsText = document.getElementById("directions-text");
 
 
 //starts game

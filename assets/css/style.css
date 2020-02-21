@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+}
+
+h1, h2 {
+text-align: center;
+}
+
+body{
+font-family: Arial, Helvetica;
+overflow: auto;
+}
+
+.mono{
+font-family: 'Monoton', cursive;
+}
+
+.bang{
+font-family: 'Monoton', cursive;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.borderbox{ 
+border-style: dashed;
+padding-bottom: 20px;
+}
+
+.wrapper{
+display: block;
+text-align: inherit
+
+}
+
+p{
+    margin-bottom: 15rem;
+}
+
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: all;
+  } 
